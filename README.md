@@ -69,4 +69,4 @@ python3 alphaearth_id.py --base_dir <DIRECTORY POINTING TO PROCESSED ALPHAEARTH 
 ## Other Documentation
 
 * To create your own AlphaEarth or Sentinel-2 image dataset, consult `create_data/README.md`
-* To run experiments varying the spatial resolution of GeoCLIP, consult 
+* To run experiments varying the spatial resolution of GeoCLIP, consult `src/intrinsic_dimension/geoclip/README.md`
