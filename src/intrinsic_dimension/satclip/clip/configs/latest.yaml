@@ -1,0 +1,121 @@
+# pytorch_lightning==2.1.0
+seed_everything: 0
+trainer:
+  accelerator: gpu
+  strategy: auto
+  devices: 1
+  num_nodes: 1
+  precision: null
+  logger:
+    class_path: pytorch_lightning.loggers.WandbLogger
+    init_args:
+      name: null
+      save_dir: .
+      version: null
+      offline: false
+      dir: null
+      id: null
+      anonymous: null
+      project: geoclip
+      log_model: true
+      experiment: null
+      prefix: ''
+      checkpoint_name: null
+      job_type: null
+      config: null
+      entity: microsoft-research-incubation
+      reinit: null
+      tags: null
+      group: null
+      notes: null
+      magic: null
+      config_exclude_keys: null
+      config_include_keys: null
+      mode: null
+      allow_val_change: null
+      resume: null
+      force: null
+      tensorboard: null
+      sync_tensorboard: null
+      monitor_gym: null
+      save_code: true
+      settings: null
+  callbacks:
+  - class_path: pytorch_lightning.callbacks.ModelCheckpoint
+    init_args:
+      dirpath: null
+      filename: '{epoch}-{val_loss:.2f}'
+      monitor: val_loss
+      verbose: false
+      save_last: true
+      save_top_k: 1
+      save_weights_only: false
+      mode: min
+      auto_insert_metric_name: true
+      every_n_train_steps: null
+      train_time_interval: null
+      every_n_epochs: null
+      save_on_train_epoch_end: null
+      enable_version_counter: true
+  fast_dev_run: false
+  max_epochs: 500
+  min_epochs: 100
+  max_steps: -1
+  min_steps: null
+  max_time: null
+  limit_train_batches: null
+  limit_val_batches: null
+  limit_test_batches: null
+  limit_predict_batches: null
+  overfit_batches: 0.0
+  val_check_interval: null
+  check_val_every_n_epoch: 1
+  num_sanity_val_steps: 0
+  log_every_n_steps: null
+  enable_checkpointing: null
+  enable_progress_bar: null
+  enable_model_summary: null
+  accumulate_grad_batches: 16
+  gradient_clip_val: null
+  gradient_clip_algorithm: null
+  deterministic: null
+  benchmark: null
+  inference_mode: true
+  use_distributed_sampler: true
+  profiler: null
+  detect_anomaly: false
+  barebones: false
+  plugins: null
+  sync_batchnorm: false
+  reload_dataloaders_every_n_epochs: 0
+  default_root_dir: null
+model:
+  embed_dim: 256
+  image_resolution: 256
+  vision_layers: moco_resnet50
+  vision_width: 128
+  vision_patch_size: 32
+  in_channels: 12
+  le_type: sphericalharmonics
+  pe_type: siren
+  frequency_num: 32
+  max_radius: 0.001
+  min_radius: 1.0e-05
+  legendre_polys: 40
+  harmonics_calculation: analytic
+  sh_embedding_dims: 40
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  num_hidden_layers: 2
+  capacity: 512
+  eval_downstream: false
+  air_temp_data_path: /home/kklemmer/GeoCLIP/experiments/data/air_temp_us
+  election_data_path: /home/kklemmer/GeoCLIP/experiments/data/election
+data:
+  data_dir: /home/kklemmer/data/s2
+  batch_size: 512
+  num_workers: 12
+  val_random_split_fraction: 0.1
+  transform: pretrained
+  mode: both
+watchmodel: true

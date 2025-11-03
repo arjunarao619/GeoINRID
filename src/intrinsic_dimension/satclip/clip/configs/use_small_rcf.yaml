@@ -1,0 +1,36 @@
+# lightning.pytorch==2.0.0
+seed_everything: 0
+trainer:
+  logger:
+    class_path: lightning.pytorch.loggers.tensorboard.TensorBoardLogger 
+    init_args:
+      save_dir: geoclip_tblogs
+      name: testlogs
+  callbacks:
+    - class_path: lightning.pytorch.callbacks.ModelCheckpoint
+      init_args:
+        monitor: "val_loss"
+        save_last: True
+        filename: "{epoch}-{val_loss:.2f}"
+  max_epochs: 500
+
+model:
+  embed_dim: 256
+  image_resolution: 256
+  vision_layers: 'rcf'
+  vision_width: 768
+  vision_patch_size: 32
+  in_channels: 4
+  le_type: grid
+  frequency_num: 16
+  max_radius: 0.01
+  min_radius: 0.00001
+  learning_rate: 0.0001
+data:
+  
+  data_dir: /home/esther/geoclip/data/naip_geoclip
+  batch_size: 64
+  num_workers: 4
+  transform: null
+  subset: 'sw'
+

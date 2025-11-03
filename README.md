@@ -33,6 +33,8 @@ GeoCLIP weights are comitted with this repo and can be found at `src/intrinsic_d
 
 Table 1 of our paper also uses embeddings derived from the AlphaEarth foundation model. Instructions to create this embedding dataset manally can be found in `create_data/` optionally, you can download pre-computed AlphaEarth embeddings that follow the spatial distribution of SatCLIP's S2-100K dataset here: https://drive.google.com/drive/folders/1USlgi7nRMqnsiJebLI4cplknVt9jWhpU?usp=sharing
 
+Download model weights from the SINR repository at https://data.caltech.edu/records/dk5g7-rhq64/files/pretrained_models.zip?download=1. Place these weights in `src/intrinsic_dimension/sinr/pretrained_models`.
+
 ## Intrinsic Dimension Computation
 
 To reproduce results in Table 1 of our paper:
