@@ -1,6 +1,8 @@
 # Measuring the Intrinsic Dimension of Earth Representations
 
-![Alt Text](animations/location_encoders_local_id_MLE.gif)
+<img src="animations/location_encoders_local_id_MLE.gif" width="100%">
+<p align="center"> <sup>Animations above are local intrinsic dimension estimates of embeddings from the GeoCLIP, SatCLIP, and CSP location encoders using the Maximum-Likelihood Estimator with k=100 nearest neighbors.<sup></p>
+
 
 Code for calculating intrinsic dimension estimates of geographic implicit neural representations and geospatial image encoders. Find our paper at https://openreview.net/forum?id=gQPD83DrGp
 
