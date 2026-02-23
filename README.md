@@ -70,3 +70,17 @@ python3 alphaearth_id.py --base_dir <DIRECTORY POINTING TO PROCESSED ALPHAEARTH 
 
 * To create your own AlphaEarth or Sentinel-2 image dataset, consult `create_data/README.md`
 * To run experiments varying the spatial resolution of GeoCLIP, consult `src/intrinsic_dimension/geoclip/README.md`
+
+## Citation
+
+If you find our work or this codebase useful, please cite our paper:
+
+```bibtex
+@inproceedings{
+rao2026measuring,
+title={Measuring the Intrinsic Dimension of Earth Representations},
+author={Arjun Rao and Marc Ru{\ss}wurm and Konstantin Klemmer and Esther Rolf},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={[https://openreview.net/forum?id=gQPD83DrGp](https://openreview.net/forum?id=gQPD83DrGp)}
+}
